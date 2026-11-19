@@ -27,8 +27,8 @@ base_input_data = {
         'verbosity': 'low',
         'tstress': True,
         'tprnfor': True,
-        'wf_collect': True,
-        'disk_io': 'high'
+#       'wf_collect': True,
+        'disk_io': 'low'
     },
     'system': {
         'ecutwfc': 65,
@@ -326,7 +326,8 @@ try:
     # Calculate integrated DOS below Fermi
     def integrate_dos(energy, dos):
         """Simple trapezoidal integration of DOS using the recommended function"""
-        return np.trapezoid(dos, energy)
+#        return np.trapezoid(dos, energy)
+        return np.trapz(dos, energy)
     
     int_tdos = integrate_dos(energy_tdos[mask_tdos], tdos[mask_tdos])
     int_pdos = integrate_dos(energy_tdos[mask_tdos], interp_pdos)

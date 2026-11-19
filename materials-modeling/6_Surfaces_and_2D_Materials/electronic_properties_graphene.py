@@ -73,7 +73,7 @@ qe_bin = "/home/milias/work/software/qe/qe-7.5/bin"
 # Main QE calculation 
 #pw_command = f'{qe_bin}/bin/pw.x'
 #pw_command = f'mpirun -np 4 {qe_bin}/bin/pw.x'
-pw_command = f'mpirun -np 4 {qe_bin}/pw.x'
+pw_command = f'mpirun -np 8 {qe_bin}/pw.x'
 
 # Serial post-processing commands for fast execution
 #pp_command = f"{qe_bin}/bin/pp.x < pp.in > pp.out 2>&1"
@@ -94,7 +94,7 @@ profile = EspressoProfile(
 
 # Set k-grids (modify as needed)
 scf_kpts = (42,42,1)
-nscf_kpts = (66, 66, 1)
+nscf_kpts = (60, 60, 1)
 
 # DOS energy parameters
 EMIN = -20.0  # Minimum energy (eV)
